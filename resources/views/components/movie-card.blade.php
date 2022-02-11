@@ -4,10 +4,10 @@
             <a href="{{route('movies.show',$movie['id'])}}">
                 <img src="{{'https://image.tmdb.org/t/p/w500/'.$movie['backdrop_path']}}" alt="" class="img-fluid">
             </a>
-            <h3>{{$movie['title']}}</h3>
-            <div class="d-flex">
+            <h4 class="my-3">{{$movie['title']}}</h4>
+            <div class="d-flex my-3">
                 <box-icon type='solid' name='star' color="yellow"></box-icon>
-                <strong>{{$movie['vote_average'] * 10 . '%'}}</strong> |
+                <strong>{{$movie['vote_average'] * 10 . '%'}}</strong> <span class="mx-3">|</span>
                 <strong>{{\Carbon\Carbon::parse($movie['release_date'])->format('d,m,y')}}</strong>
             </div>
             <div class="d-flex">

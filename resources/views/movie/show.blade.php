@@ -66,17 +66,21 @@
                     <div class="col-lg-2 col-md-6 col-sm-12">
                         <div class="card bg-dark text-white border-0">
                             <div class="card-body">
-                                <img src="{{'https://image.tmdb.org/t/p/w300/'.$cast['profile_path']}}" alt="{{$cast['name']}}" class="img-fluid" style="width: 100%">
+                                <a href="{{route('actors.show',$cast['id'])}}">
+                                    <img src="{{'https://image.tmdb.org/t/p/w300/'.$cast['profile_path']}}" alt="{{$cast['name']}}" class="img-fluid" style="width: 100%">
+                                </a>
                                 <h3 class="my-2">{{$cast['name']}}</h3>
                                 <strong>{{$cast['character']}}</strong>
                             </div>
                         </div>
                     </div>
+                @else
+                    @break
                 @endif
             @endforeach
         </div>
         <hr class="text-white">
-        <!-- cast -->
+        <!-- shooting -->
         <div class="row justify-content-center">
             <h1 class="text-center text-white">Shooting Scene</h1>
             @foreach($movie['images']['backdrops'] as $image)

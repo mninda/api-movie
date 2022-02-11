@@ -20,15 +20,10 @@
                                     <a class="nav-link" href="#">TV-shows</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link">Actors</a>
+                                    <a href="{{route('actors.index')}}" class="nav-link">Actors</a>
                                 </li>
                             </ul>
-                            <div class="d-flex align-items-center">
-                                <form>
-                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                </form>
-                                <img src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png" alt="" style="width: 38px;height: 38px;border-radius: 50%" class="mx-2">
-                            </div>
+                            <livewire:search-dropdown />
                         </div>
                     </div>
                 </nav>

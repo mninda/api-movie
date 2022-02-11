@@ -20,6 +20,7 @@ class MovieController extends Controller
             ->get('https://api.themoviedb.org/3/movie/popular')
             ->json()['results'];
 
+//        dd($popularMovies);
         $nowPlayingMovies = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/movie/now_playing')
             ->json()['results'];
@@ -33,7 +34,7 @@ class MovieController extends Controller
             return [$genre['id'] => $genre['name']];
         });
 //        dump($nowPlayingMovies);
-        return view('index',[
+        return view('movie.index',[
             'popularMovies' => $popularMovies,
             'nowPlayingMovies' => $nowPlayingMovies,
             'genres' => $genres,
@@ -73,7 +74,7 @@ class MovieController extends Controller
             ->get('https://api.themoviedb.org/3/movie/'.$id.'?append_to_response=credits,videos,images')
             ->json();
 //        dump($movie);
-        return view('show',[
+        return view('movie.show',[
             'movie' => $movie,
         ]);
     }
