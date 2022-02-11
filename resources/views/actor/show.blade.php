@@ -41,7 +41,7 @@
                     <div class="row pt-5">
                         @foreach($creditMovies as $movie)
                             <div class="col-lg-2 col-md-6 col-sm-12 my-3">
-                                <a href="{{route('movies.show',$movie['id'])}}">
+                                <a href="{{$movie['linkToPage']}}">
                                     <img src="{{$movie['poster_path']}}" alt="" class="img-fluid" style="width: 100%">
                                 </a>
                                 <h4 class="mt-2 text-white">{{$movie['title']}}</h4>
